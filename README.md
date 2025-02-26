@@ -33,6 +33,90 @@
 
 ---
 
+## 코드 구조
+
+```
+.
+├── FrankitApplication.java
+├── FrankitControllerAdvice.java
+├── config
+│   ├── JpaConfig.java
+│   ├── SecurityConfig.java
+│   └── SwaggerConfig.java
+├── controller
+│   ├── ProductController.java
+│   ├── ProductOptionController.java
+│   └── UserController.java
+├── dto
+│   ├── request
+│   │   ├── product
+│   │   │   ├── ProductDto.java
+│   │   │   ├── ProductOptionDto.java
+│   │   │   ├── ProductOptionRequestDto.java
+│   │   │   ├── ProductOptionsRequestDto.java
+│   │   │   ├── ProductRequestDto.java
+│   │   │   ├── SelectOptionRequestDto.java
+│   │   │   └── SingleOptionRequestDto.java
+│   │   └── user
+│   │       ├── LoginRequestDto.java
+│   │       ├── SignUpRequestDto.java
+│   │       └── UserDto.java
+│   ├── response
+│   │   ├── ApiSuccessResponse.java
+│   │   └── product
+│   │       ├── ProductApiResponseDto.java
+│   │       ├── ProductOptionResponseDto.java
+│   │       ├── SelectOptionResponseDto.java
+│   │       └── SingleOptionResponseDto.java
+│   └── security
+│       └── CustomUserDetails.java
+├── entity
+│   ├── product
+│   │   ├── AuditingFields.java
+│   │   ├── OptionType.java
+│   │   ├── Product.java
+│   │   ├── ProductOption.java
+│   │   ├── SelectOption.java
+│   │   └── SingleOption.java
+│   └── user
+│       └── User.java
+├── exception
+│   ├── ProductErrorCode.java
+│   ├── ProductException.java
+│   ├── UserErrorCode.java
+│   └── UserException.java
+├── jwt
+│   ├── JwtAuthenticationFilter.java
+│   └── JwtUtil.java
+├── repository
+│   ├── ProductOptionRepository.java
+│   ├── ProductRepository.java
+│   └── UserRepository.java
+├── service
+│   ├── CustomUserDetailsService.java
+│   ├── ProductOptionService.java
+│   ├── ProductService.java
+│   └── UserService.java
+└── util
+└── OptionParser.java
+```
+
+### 주요 파일 및 디렉토리 설명
+
+- config : 프로젝트 설정 관련 파일 (JPA, Security, Swagger 설정 등)
+- controller : API 요청을 처리하는 컨트롤러 클래스
+- dto : 데이터 전송 객체 (DTO), 요청/응답을 처리
+  - request : 클라이언트에서 들어오는 요청을 위한 DTO
+  - response : API 응답을 위한 DTO
+- entity : 데이터베이스 테이블과 매핑되는 JPA 엔티티 클래스
+- exception : 예외 및 에러 코드 정의
+- jwt : JWT 인증 관련 클래스
+- repository : JPA Repository 인터페이스 (DB 접근)
+- service : 비즈니스 로직을 처리하는 서비스 계층
+- util : 유틸리티 기능을 수행하는 클래스
+
+---
+
 ## ✅ 고려 사항
 
 ### 1. 보안 및 인증

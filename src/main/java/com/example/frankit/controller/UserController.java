@@ -4,7 +4,6 @@ import com.example.frankit.dto.request.user.LoginRequestDto;
 import com.example.frankit.dto.request.user.SignUpRequestDto;
 import com.example.frankit.dto.response.ApiSuccessResponse;
 import com.example.frankit.jwt.JwtUtil;
-import com.example.frankit.service.CustomUserDetailsService;
 import com.example.frankit.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +23,6 @@ public class UserController {
 
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
-    private final CustomUserDetailsService userDetailsService;
     private final JwtUtil jwtUtil;
 
 
